@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/instagram_image"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/instagram"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+    <EditText
+        android:id="@+id/email_input"
+        style="@style/login_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instagram_image"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email">
+    </EditText>
+
+    <EditText
+        android:id="@+id/password_input"
+        style="@style/login_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_input"
+        android:inputType="textPassword"
+        android:hint="@string/password">
+    </EditText>
+
+    <Button
+        android:id="@+id/login_btn"
+        style="@style/login_btn"
+        android:text="@string/log_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input"
+        android:background="@drawable/login_btn_bg">
+    </Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/don_t_have_an_account_sign_up"
+        android:gravity="center"
+        android:background="@drawable/top_border_grey">
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
