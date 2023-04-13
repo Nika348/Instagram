@@ -1,6 +1,8 @@
 package com.example.instagram.activities
 
+import android.content.ContentValues.TAG
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -12,7 +14,7 @@ class ValueEventListenerAdapter(val handler: (DataSnapshot) -> Unit): ValueEvent
     }
 
     override fun onCancelled(error: DatabaseError) {
-        TODO("Not yet implemented")
+        Log.e(TAG, "onCancelled", error.toException())
     }
 }
 

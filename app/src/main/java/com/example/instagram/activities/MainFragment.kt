@@ -24,9 +24,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     fun setUp(){
+        val bottomNavigation = binding.bottomNavigationView
         val navHost = childFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHost.navController
         binding.bottomNavigationView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment,
+                R.id.likesFragment,
+                R.id.profileFragment,
+                R.id.searchFragment,
+                R.id.shareFragment -> bottomNavigation.visibility =
+                    View.VISIBLE
+                else -> bottomNavigation.visibility = View.GONE
+            }
+        }
     }
 
     override fun onDestroyView() {
