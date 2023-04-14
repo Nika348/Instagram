@@ -57,17 +57,20 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     if (it.isSuccessful) {
                         findNavController().navigate(R.id.homeFragment)
                     }
-                }.addOnFailureListener{
-                    Log.e("Tag", "onError: ${it.message}");
+                }.addOnFailureListener {
+                    Log.e("Tag", "onError: ${it.message}")
                 }
             } else {
                 Toast.makeText(
                     requireActivity(),
                     "Please enter email and password",
                     Toast.LENGTH_SHORT
-                ).show();
+                ).show()
             }
         }
-    }
+        binding.createAccountText.setOnClickListener {
+            findNavController().navigate(R.id.emailFragment)
+        }
 
+    }
 }
